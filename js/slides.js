@@ -10,6 +10,8 @@ const images = slideArea.querySelectorAll("img");
 let currentSlide = 0;
 let z = 1;
 
+// ON CLICK EFFECTS
+
 // when I click the slide area, change the slide based on z-index
 slideArea.addEventListener("click", function () {
   currentSlide = currentSlide + 1;
@@ -29,4 +31,27 @@ slideArea.addEventListener("click", function () {
   images[currentSlide].style.zIndex = z;
   // bringing in the fade keyframe from style.css
   images[currentSlide].style.animation = "fade 0.5s";
+});
+
+// MOUSEOVER EFFECTS
+
+// When I put my mouseover the slide area, put all of the images in a random placing
+
+slideArea.addEventListener("mouseover", function () {
+  images.forEach((image) => {
+    const x = 100 * Math.random() - 50;
+    const y = 100 * Math.random() - 50;
+
+    image.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
+
+// MOUSEOUT EVENT
+
+// When I move my mouse away, put the images back
+
+slideArea.addEventListener("mouseout", function () {
+  images.forEach((image) => {
+    image.style.transform = "";
+  });
 });
