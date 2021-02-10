@@ -18,11 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  font-size: 24px;
-  font-weight: 700;
-}
-
 /* fixed in position, at top left, 240px wide and always the height of the viewport */
 nav {
   position: fixed;
@@ -130,3 +125,37 @@ In menu.js change const mainTag to be "nav" instead of "main"
 */
 
 /* there's another variation 3 where both move over - see superhi video */
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+section div {
+  width: 350px;
+}
+
+section div.content {
+  margin: 0 0 0 60px;
+}
+
+h1 {
+  font-family: "Young Serif";
+  font-size: 45px;
+  line-height: 1.2;
+}
+
+p {
+  margin: 20px 0 20px 0;
+}
+
+a.button {
+  display: inline-block;
+  background-color: #00b98d;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px 10px 15px;
+  border-radius: 3px;
+}
