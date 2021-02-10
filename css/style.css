@@ -1,3 +1,13 @@
+/* animation of the slideshow */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @font-face {
   font-family: "IBM Plex Mono";
   src: url(/css/ibm-plex-mono.woff2), url(/css/ibm-plex-mono.woff);
@@ -158,4 +168,22 @@ a.button {
   text-decoration: none;
   padding: 10px 15px 10px 15px;
   border-radius: 3px;
+}
+
+/* set a box for your slides */
+div.slides {
+  height: 475px;
+  position: relative;
+}
+
+/* position all the images absolutely in the box */
+div.slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* choosing which slide goes on top using z-index */
+div.slides img:first-child {
+  z-index: 1;
 }
