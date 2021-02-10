@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url(/css/ibm-plex-mono.woff2), url(/css/ibm-plex-mono.woff);
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src: url(/css/youngserif.woff2), url(/css/youngserif.woff);
+}
+
+body {
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #2a2a2a;
+  /* anything that goes out of side of the page, shouldn't have a scrollbar */
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* fixed in position, at top left, 240px wide and always the height of the viewport */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #00b98d;
+  font-family: "Young Serif";
+  color: #fff;
+  font-size: 24px;
+  /* vertically centre at all times */
+  display: flex;
+  justify-content: center;
+  /*  show items in a column */
+  flex-direction: column;
+}
+
+/* navigation links */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 32px 5px 32px;
+}
+
+main {
+  position: relative;
+  /* z-index is what is on top of something else i.e. in the third dimension x, y, z */
+  z-index: 1;
+  background-color: #fff;
+  min-height: 100vh;
+  transition: transform 0.5s;
+}
+
+main.open {
+  transform: translate(240px, 0);
+}
+
+a.toggle-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 24px;
+  text-decoration: none;
+  color: #2a2a2a;
+}
+
+a.toggle-nav img {
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+}
+
+/* classList are the classes, on an html tag, in a list */
+
+/* VARIATION 1 */
+
+/* Can have navigation on the right. 
+
+--- CHANGE ---
+
+nav {
+  left: 0;
+}
+main.open {
+  transform: translate(240px, 0);
+}
+
+ --- TO ---
+
+nav {
+  right: 0;
+}
+main.open {
+  transform: translate(-240px, 0);
+} 
+
+AND PUT THE TOGGLE TAG OUTSIDE THE MAIN TAG IN INDEX.HTML
+*/
+
+/* HAVE THE NAVIGATION MOVE OVER THE CONTENT RATHER THAN SLIDE FROM UNDERNEATH IT OVER 
+
+CHANGE
+
+nav {
+  right: 0;
+}
+
+TO
+
+nav {
+  left: -240px;
+}
+
+ADD
+
+nav.open (
+  left: 0;
+)
+nav {
+  z-index: 2;
+  transition: left 0.5s;
+}
+
+In menu.js change const mainTag to be "nav" instead of "main"
+*/
+
+/* there's another variation 3 where both move over - see superhi video */

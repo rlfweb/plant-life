@@ -1,0 +1,38 @@
+<!-- nav will slide across -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plant Life</title>
+
+    <link href="/css/base.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="help.html">Help</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <!-- surround everything else on page within main tag -->
+    <main>
+      <!-- empty 'a' tag used to toggle the nav -->
+      <a href="#" class="toggle-nav"> <img src="/images/menu.svg" /> Menu </a>
+
+      <section>
+        <!-- the srcset allows you to have a larger jpg if it's a retina screen -->
+        <img
+          src="/images/plant1.jpg"
+          srcset="/images/plant1.jpg, /images/plant1-2x.jpg 2x"
+        />
+      </section>
+    </main>
+
+    <script src="js/menu.js"></script>
+  </body>
+</html>
